@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.aspectj.weaver.tools.Trace;
+
 
 @Entity
 @Table(name = "project_data")
@@ -26,7 +28,7 @@ public class Project {
 	@Column(name = "project_desc")
 	private String description;
 	
-	@Column(name = "project_identifier")
+	@Column(name = "project_identifier", unique = true)
 	private String projectIdentifier;
 	
 	@Column(name = "project_createddate")
@@ -106,6 +108,7 @@ public class Project {
 		this.updatedDate = updatedDate;
 		this.startedDate = startedDate;
 	}
+	
 	@Override
 	public String toString() {
 		return "Project [projectId=" + projectId + ", projectName=" + projectName + ", description=" + description
