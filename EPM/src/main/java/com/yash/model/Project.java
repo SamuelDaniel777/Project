@@ -12,6 +12,8 @@ import javax.persistence.Table;
 
 import org.aspectj.weaver.tools.Trace;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Entity
 @Table(name = "project_data")
@@ -28,19 +30,25 @@ public class Project {
 	@Column(name = "project_desc")
 	private String description;
 	
+	
 	@Column(name = "project_identifier", unique = true)
 	private String projectIdentifier;
 	
+	
 	@Column(name = "project_createddate")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date createdDate;
 	
 	@Column(name = "project_enddate")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
 	
 	@Column(name = "project_updateddate")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date updatedDate;
 	
 	@Column(name = "project_startddate")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date startedDate;
 	
 	
