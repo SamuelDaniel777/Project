@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.yash.model.Project;
-import com.yash.repositories.ProjectRepository;
+import com.yash.repositories.DaoRepository;
 
 @Component
 public class DaoImpl {
 	
     @Autowired
-    private ProjectRepository repository;
+    private DaoRepository repository;
 
     public boolean saveOrUpdate(Project pro) {
     	try {
@@ -48,18 +48,5 @@ public class DaoImpl {
 		}
 		
 	}
-    
-    
-//    private Dog toEntity(DogDto dto) {
-//        Dog entity = new Dog();
-//        entity.setName(dto.getName());
-//        entity.setAge(dto.getAge());
-//        return entity;
-//    }
-
-    
-
-  
-
-
+   
 }

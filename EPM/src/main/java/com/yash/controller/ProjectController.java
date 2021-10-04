@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.yash.daoimpl.DaoImpl;
+import com.yash.exception.BODataNotFoundException;
 import com.yash.model.Project;
 import com.yash.projectserviceimpl.ProjectService;
 
@@ -53,7 +54,7 @@ public class ProjectController {
     }
     
     @PostMapping("/getbyidentifier")
-    public Project getByProjectIdentifier(Project pro) {
+    public Project getByProjectIdentifier(Project pro) throws BODataNotFoundException {
     	logger.trace("project identifier method called"+pro.getProjectIdentifier());
         Project p= psr.findProjectIdenifier(pro.getProjectIdentifier());
         return p;
